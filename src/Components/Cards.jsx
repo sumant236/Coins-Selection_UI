@@ -1,15 +1,16 @@
-import "./Cards.module.css";
+import styles from "./Cards.module.css";
 
-export default function Cards({ image, imgName, price, name }) {
+export default function Cards({ keyId, image, imgName, price, name }) {
   return (
-    <>
-      <div className="card">
-        <img src={image} alt={imgName} />
+    // create a component every time data exists
+      <div className={styles.card} key={keyId}>
+        <div className={styles.imgWrapper}>
+            <img src={image} alt={imgName} className={styles.img}/>
+            <p>{name}</p>
+        </div>
         <div>
-          <p>{name}</p>
-          <p>{price}</p>
+            <p className={styles.price}>${price}</p>
         </div>
       </div>
-    </>
   );
 }
