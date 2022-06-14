@@ -61,28 +61,29 @@ export const Search = () => {
                 <div className={styles.cardWrapper}>
                     {/* everytime the text will change this will filter out the coin name which contains same coin name as text*/}
                     {data
-                    ?.filter((item) => {
-                        if (text === "") {
-                        return item;
-                        } else if (
-                        item.coinName
-                            .toLowerCase()
-                            .split(" ")
-                            .join("")
-                            .includes(text.toLowerCase())
-                        ) {
-                        return item;
-                        }
-                    })
-                    .map((item) => {
-                        return (
-                            <Cards
-                            keyId= {item._id}
-                            image={item.coinImage}
-                            imgName={item.coinName}
-                            price={item.usd_price}
-                            name={item.coinName}
-                            />
+            ?.filter((item) => {
+              if (text === "") {
+                return item;
+              } else if (
+                item.coinName
+                  .toLowerCase()
+                  .split(" ")
+                  .join("")
+                  .includes(text.toLowerCase()) ||
+                item.coinSymbol.toLowerCase().includes(text.toLowerCase())
+              ) {
+                return item;
+              }
+            })
+            .map((item) => {
+              return (
+                <Cards
+                  keyId={item._id}
+                  image={item.coinImage}
+                  imgName={item.coinName}
+                  price={item.usd_price}
+                  name={item.coinName}
+                />
                         )
                         }
                     )}
