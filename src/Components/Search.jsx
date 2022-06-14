@@ -48,12 +48,13 @@ export const Search = () => {
         <div className={styles.searchWrapper}>
             <div className={styles.search}>
                 <img src={img} alt="" className={styles.bankerImg}/>
+                <hr />
                 <div className={styles.searchBox}>
                 <h5>Select Display Currency</h5>
                 <TextField fullWidth label="Search Currencies..." id="fullWidth" value={text}
                     size="small"
                     onChange={(e) => {
-                    setText(e.target.value);
+                      setText(e.target.value);
                     }}/>
                 </div>
                 <div className={styles.cardWrapper}>
