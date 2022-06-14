@@ -4,6 +4,7 @@ import Cards from "./Cards";
 import TextField from '@mui/material/TextField';
 import styles from "./Search.module.css"
 import LinearProgress from '@mui/material/LinearProgress';
+import img from "../Image/Screenshot (375).png"
 
 export const Search = () => {
     // using useState hooks to store our data and update it later
@@ -46,10 +47,7 @@ export const Search = () => {
     return (
         <div className={styles.searchWrapper}>
             <div className={styles.search}>
-                <h1 style={{fontFamily: "'Astloch', cursive"}} className={styles.bankerTag}><style>
-                @import url('https://fonts.googleapis.com/css2?family=Astloch:wght@700&display=swap');
-                </style>Banker
-                </h1>
+                <img src={img} alt="" className={styles.bankerImg}/>
                 <div className={styles.searchBox}>
                 <h5>Select Display Currency</h5>
                 <TextField fullWidth label="Search Currencies..." id="fullWidth" value={text}
